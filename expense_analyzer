@@ -1,0 +1,39 @@
+import java.util.*;
+class expense_ananlyzer
+{
+  static void main(String args[])
+{ Scanner sc = new Scanner (System.in);
+System.out.println("ENTER NUMBER OF EXPENSES:");
+int n =sc.nextInt();
+int[] expenses= new int[n];
+double e=0;//expense
+double max=0;//biggest expense
+double te=0;//total expense
+double avg=0.0;//average expense
+int aa=0;//number of expenses above average
+double min=0.0;
+int c=0;
+for(int i=1;i<=n;i++)
+{ System.out.println("EXPENSE");
+    e= sc.nextInt();
+    te=te+e;
+    if (max<e)
+    max=e;
+    if(i==1)
+    min=e;
+    else if(min>e)
+    min=e;
+    c++;
+}
+avg=te/c;
+for (int j=0;j<n;j++)
+{ if (avg< expenses[j])
+    aa++;
+}
+System.out.println("TOTAL EXPENDITURE:"+te);
+System.out.println("AVERAGE EXPENDITURE:"+avg);
+System.out.println("HIGHEST EXPENDITURE:"+max);
+System.out.println("LOWEST EXPENDITURE:"+min);
+System.out.println("NUMBER OF EXPENSES ABOVE AVERAGE EXPENDITURE:"+aa);
+}}
+
